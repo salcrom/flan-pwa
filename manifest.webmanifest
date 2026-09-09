@@ -1,0 +1,16 @@
+{
+  "name": "Recetas de flan",
+  "short_name": "Flan",
+  "description": "Recetas de flan y quesillo con ajuste de raciones, temporizadores y modo offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7ECD1",
+  "theme_color": "#7A4A22",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "icons": [
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
