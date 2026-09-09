@@ -1,0 +1,1 @@
+Application icons are committed as binary PNG assets.
