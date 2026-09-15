@@ -1,7 +1,7 @@
 {
-  "name": "Recetas de flan",
-  "short_name": "Flan",
-  "description": "Recetas de flan y quesillo con ajuste de raciones, temporizadores y modo offline.",
+  "name": "Dulce a tu ritmo",
+  "short_name": "Dulce",
+  "description": "Recetas dulces paso a paso, con ajuste de raciones, temporizadores y modo offline.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
