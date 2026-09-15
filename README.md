@@ -13,8 +13,9 @@ temporizadores y funcionamiento sin conexión.
 - Rollos de canela con chocolate: adaptación redactada a partir de la
   [publicación de @reposteriacasera_7](https://www.instagram.com/p/DdRYl-1DBY_/),
   consultada el 15 de septiembre de 2026. No reutiliza el vídeo, las fotografías
-  ni la redacción original. Requiere una prueba real antes de considerarse
-  validada.
+  ni la redacción original. Sus tres imágenes orientativas son originales,
+  generadas para la PWA y están identificadas como tales. Requiere una prueba
+  real antes de considerarse validada.
 
 El repositorio conserva el nombre técnico `flan-pwa` para no romper la URL
 instalada. Cambiar el nombre del repositorio se evaluará por separado.
