@@ -21,6 +21,8 @@ temporizadores y funcionamiento sin conexión.
   El reel no especifica las dimensiones del molde.
 - Tarta de almendra y naranja: receta naturalmente sin gluten para molde de
   22 cm, con almendra molida, naranja fresca y canela.
+- Tarta Ferrero de chocolate y avellanas: bizcocho de cacao en tres capas,
+  crema de mascarpone y Nutella, avellanas tostadas y ganache de chocolate.
 
 El repositorio conserva el nombre técnico `flan-pwa` para no romper la URL
 instalada. Cambiar el nombre del repositorio se evaluará por separado.
