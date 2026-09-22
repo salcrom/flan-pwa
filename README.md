@@ -19,6 +19,8 @@ temporizadores y funcionamiento sin conexión.
 - Tarta de queso con chocolate Fusión Maracuyá: receta de tres ingredientes
   incorporada a partir del [reel de Alex Seblanc](https://www.instagram.com/reel/DakgO77tWan/).
   El reel no especifica las dimensiones del molde.
+- Tarta de almendra y naranja: receta naturalmente sin gluten para molde de
+  22 cm, con almendra molida, naranja fresca y canela.
 
 El repositorio conserva el nombre técnico `flan-pwa` para no romper la URL
 instalada. Cambiar el nombre del repositorio se evaluará por separado.
