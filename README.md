@@ -24,5 +24,7 @@ temporizadores y funcionamiento sin conexión.
 - Tarta Ferrero de chocolate y avellanas: bizcocho de cacao en tres capas,
   crema de mascarpone y Nutella, avellanas tostadas y ganache de chocolate.
 
+- Bizcocho de canela tipo cinnamon roll: cantidades y horneado del [reel de @amortreats99](https://www.instagram.com/reel/DdrVvQ0KQUT/), con pasos de mezclado adaptados. Pendiente de prueba real.
+
 El repositorio conserva el nombre técnico `flan-pwa` para no romper la URL
 instalada. Cambiar el nombre del repositorio se evaluará por separado.
