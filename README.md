@@ -40,6 +40,11 @@ temporizadores y funcionamiento sin conexión.
   esta cautela sigue el
   [artículo 9 del Real Decreto 1021/2022](https://www.boe.es/buscar/act.php?id=BOE-A-2022-21681#a9),
   aplicable a elaboraciones sin un tratamiento térmico suficiente.
+- Tarta de galletas de la abuela: cantidades tomadas de la descripción del
+  [reel de @deliciousmartha](https://www.instagram.com/deliciousmartha/reel/DeOqOBANffZ/).
+  La fuente deja las galletas, el limón y la canela al gusto y no aporta tiempos
+  ni orden completo; el procedimiento de la PWA está identificado como una
+  adaptación práctica pendiente de prueba.
 
 - Bizcocho de canela tipo cinnamon roll: cantidades y horneado del [reel de @amortreats99](https://www.instagram.com/reel/DdrVvQ0KQUT/), con pasos de mezclado adaptados. Pendiente de prueba real.
 
