@@ -45,6 +45,11 @@ temporizadores y funcionamiento sin conexión.
   La fuente deja las galletas, el limón y la canela al gusto y no aporta tiempos
   ni orden completo; el procedimiento de la PWA está identificado como una
   adaptación práctica pendiente de prueba.
+- Tarta tres leches: cantidades y método principal tomados del
+  [reel de @bakerybynoelia](https://www.instagram.com/p/DeWB9G8M-L-/).
+  La fuente no especifica molde, temperatura ni tiempo de horno; esos datos se
+  presentan como una adaptación pendiente de prueba. No se añade levadura
+  química porque no figura en la publicación.
 
 - Bizcocho de canela tipo cinnamon roll: cantidades y horneado del [reel de @amortreats99](https://www.instagram.com/reel/DdrVvQ0KQUT/), con pasos de mezclado adaptados. Pendiente de prueba real.
 

@@ -17,7 +17,7 @@ test('el JavaScript incrustado conserva una sintaxis válida', () => {
 });
 
 test('las recetas nuevas tienen pestaña, datos y una única fuente principal', () => {
-  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela']) {
+  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela', 'tresLeches']) {
     assert.match(html, new RegExp(`data-r="${id}"`));
     assert.match(html, new RegExp(`R\\.${id}=`));
   }
@@ -37,6 +37,19 @@ test('la tarta de galletas conserva cantidades y límites de la fuente', () => {
   assert.match(html, /no detalla tiempos, recipiente ni orden completo/);
 });
 
+test('la tarta tres leches conserva cantidades y límites de la fuente', () => {
+  assert.equal((html.match(/DeWB9G8M-L-/g) || []).length, 1);
+  assert.equal((html.match(/data-r="tresLeches"/g) || []).length, 1);
+  assert.match(html, /R\.tresLeches=\{/);
+  assert.match(html, /\['huevos',4,''/);
+  assert.match(html, /\['leche condensada',300,' g'/);
+  assert.match(html, /\['leche evaporada',300,' g'/);
+  assert.match(html, /\['nata para montar',300,' g'/);
+  assert.match(html, /\['claras pasteurizadas para el merengue',100,' g'/);
+  assert.match(html, /La fuente no indica tamaño del molde, temperatura ni tiempo de horno/);
+  assert.match(html, /La autora no incluye levadura química/);
+});
+
 test('el tiramisú de limón no inventa soletillas y exige yemas pasteurizadas', () => {
   assert.match(html, /bizcochos de soletilla','cantidad pendiente'/);
   assert.match(html, /yemas comercialmente pasteurizadas/);
@@ -51,7 +64,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v21/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v22/);
   const shellMatch = serviceWorker.match(/const APP_SHELL=\[([^\]]+)\]/);
   assert.ok(shellMatch);
   const assets = [...shellMatch[1].matchAll(/'\.\/(.*?)'/g)].map(
