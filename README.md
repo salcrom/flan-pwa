@@ -50,6 +50,11 @@ temporizadores y funcionamiento sin conexión.
   La fuente no especifica molde, temperatura ni tiempo de horno; esos datos se
   presentan como una adaptación pendiente de prueba. No se añade levadura
   química porque no figura en la publicación.
+- Cheesecake de cookie: cantidades, molde y horneado tomados del
+  [reel de @bakerybynoelia](https://www.instagram.com/p/DYbrqpYszJT/).
+  La fuente indica un molde de 20 cm, 4 minutos de precocción y unos 20 minutos
+  de horneado final a 180 °C. El enfriado y la conservación refrigerada se
+  identifican como indicaciones prácticas añadidas por la PWA.
 
 - Bizcocho de canela tipo cinnamon roll: cantidades y horneado del [reel de @amortreats99](https://www.instagram.com/reel/DdrVvQ0KQUT/), con pasos de mezclado adaptados. Pendiente de prueba real.
 

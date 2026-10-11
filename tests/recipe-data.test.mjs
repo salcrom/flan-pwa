@@ -17,7 +17,7 @@ test('el JavaScript incrustado conserva una sintaxis válida', () => {
 });
 
 test('las recetas nuevas tienen pestaña, datos y una única fuente principal', () => {
-  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela', 'tresLeches']) {
+  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela', 'tresLeches', 'cheesecakeCookie']) {
     assert.match(html, new RegExp(`data-r="${id}"`));
     assert.match(html, new RegExp(`R\\.${id}=`));
   }
@@ -50,6 +50,20 @@ test('la tarta tres leches conserva cantidades y límites de la fuente', () => {
   assert.match(html, /La autora no incluye levadura química/);
 });
 
+test('la cheesecake de cookie conserva cantidades, molde y horneado de la fuente', () => {
+  assert.equal((html.match(/DYbrqpYszJT/g) || []).length, 1);
+  assert.equal((html.match(/data-r="cheesecakeCookie"/g) || []).length, 1);
+  assert.match(html, /R\.cheesecakeCookie=\{/);
+  assert.match(html, /\['azúcar moreno',100,' g'/);
+  assert.match(html, /\['chips de chocolate',300,' g'/);
+  assert.match(html, /\['queso crema',530,' g'/);
+  assert.match(html, /\['huevo',120,' g'/);
+  assert.match(html, /molde redondo de 20 cm/);
+  assert.match(html, /Hornea la base a 180 °C durante 4 minutos/);
+  assert.match(html, /unos 20 minutos/);
+  assert.match(html, /El enfriado y la conservación refrigerada son indicaciones prácticas/);
+});
+
 test('el tiramisú de limón no inventa soletillas y exige yemas pasteurizadas', () => {
   assert.match(html, /bizcochos de soletilla','cantidad pendiente'/);
   assert.match(html, /yemas comercialmente pasteurizadas/);
@@ -64,7 +78,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v22/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v23/);
   const shellMatch = serviceWorker.match(/const APP_SHELL=\[([^\]]+)\]/);
   assert.ok(shellMatch);
   const assets = [...shellMatch[1].matchAll(/'\.\/(.*?)'/g)].map(
