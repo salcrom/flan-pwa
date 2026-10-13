@@ -64,9 +64,11 @@ temporizadores y funcionamiento sin conexión.
   pendiente de una prueba real.
 - Brownie de yogur griego: ficha creada a partir de la
   [publicación de @sinculpasrecetas](https://www.instagram.com/p/DdpgRFNjmcd/),
-  identificada en Instagram como «Contenido de IA». Solo concreta 2 huevos,
-  1 cucharada de impulsor y 30 minutos a 190 °C; el resto de cantidades se
-  mantiene pendiente y la afirmación nutricional no se presenta como validada.
+  identificada en Instagram como «Contenido de IA». La fuente concreta 2 huevos,
+  1 cucharada de impulsor y 30 minutos a 190 °C. La PWA completa el resto como
+  adaptación propia para un molde de 20 cm y reduce el impulsor a 8 g para evitar
+  un posible sabor amargo. Estas decisiones no se atribuyen al autor y siguen
+  pendientes de una prueba real; la afirmación nutricional tampoco se valida.
 
 - Bizcocho de canela tipo cinnamon roll: cantidades y horneado del [reel de @amortreats99](https://www.instagram.com/reel/DdrVvQ0KQUT/), con pasos de mezclado adaptados. Pendiente de prueba real.
 

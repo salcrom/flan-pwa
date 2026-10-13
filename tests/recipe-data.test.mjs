@@ -79,17 +79,21 @@ test('la tarta de cumpleaños queda priorizada sin ocultar límites de la fuente
   assert.match(html, /no se completa con ingredientes o técnicas inventadas/);
 });
 
-test('el brownie de yogur conserva solo las cantidades publicadas', () => {
+test('el brownie de yogur distingue la fuente de las cantidades adaptadas', () => {
   assert.equal((html.match(/DdpgRFNjmcd/g) || []).length, 1);
   assert.equal((html.match(/data-r="brownieGriego"/g) || []).length, 1);
   assert.match(html, /R\.brownieGriego=\{/);
-  assert.match(html, /\['yogur griego','cantidad pendiente'/);
-  assert.match(html, /\['azúcar moreno','cantidad pendiente'/);
+  assert.match(html, /\['yogur griego natural',250,' g'/);
+  assert.match(html, /\['azúcar moreno',80,' g'/);
   assert.match(html, /\['huevos',2,''/);
-  assert.match(html, /\['cacao en polvo','cantidad pendiente'/);
-  assert.match(html, /\['impulsor químico',1,' cucharada'/);
-  assert.match(html, /Hornea a 190 °C durante 30 minutos/);
-  assert.match(html, /Instagram la identifica como «Contenido de IA»/);
+  assert.match(html, /\['extracto de vainilla',1,' cdta'/);
+  assert.match(html, /\['cacao puro en polvo',50,' g'/);
+  assert.match(html, /\['chips de chocolate',80,' g'/);
+  assert.match(html, /\['impulsor químico',8,' g'/);
+  assert.match(html, /la publicación indica 30 minutos/);
+  assert.match(html, /no se atribuyen al autor y requieren una prueba real/);
+  assert.match(html, /La fuente muestra 1 cucharada de impulsor/);
+  assert.match(html, /Instagram identifica como «Contenido de IA»/);
   assert.match(html, /no está respaldada por datos nutricionales/);
 });
 
@@ -107,7 +111,12 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v25/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v26/);
+  assert.match(serviceWorker, /event\.request\.mode==='navigate'/);
+  assert.match(serviceWorker, /fetch\(event\.request\)/);
+  assert.doesNotMatch(serviceWorker, /install',event=>\{[^}]*self\.skipWaiting/);
+  assert.match(html, /id="checkUpdate"/);
+  assert.match(html, /visibilitychange/);
   const shellMatch = serviceWorker.match(/const APP_SHELL=\[([^\]]+)\]/);
   assert.ok(shellMatch);
   const assets = [...shellMatch[1].matchAll(/'\.\/(.*?)'/g)].map(
