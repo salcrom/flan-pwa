@@ -55,6 +55,13 @@ temporizadores y funcionamiento sin conexión.
   La fuente indica un molde de 20 cm, 4 minutos de precocción y unos 20 minutos
   de horneado final a 180 °C. El enfriado y la conservación refrigerada se
   identifican como indicaciones prácticas añadidas por la PWA.
+- Tarta espectáculo de chocolate y cacahuete: receta priorizada como especial
+  de cumpleaños a partir del
+  [reel de @cookrate.cakes](https://www.instagram.com/p/DeXo9FGgnX-/).
+  La publicación aporta los ingredientes, pero no los separa con claridad por
+  capas, deja sin peso una pieza de chocolate y no indica molde ni horneado. La
+  PWA distingue esos límites de las adaptaciones prácticas y mantiene la receta
+  pendiente de una prueba real.
 
 - Bizcocho de canela tipo cinnamon roll: cantidades y horneado del [reel de @amortreats99](https://www.instagram.com/reel/DdrVvQ0KQUT/), con pasos de mezclado adaptados. Pendiente de prueba real.
 

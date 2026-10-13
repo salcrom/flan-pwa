@@ -17,7 +17,7 @@ test('el JavaScript incrustado conserva una sintaxis válida', () => {
 });
 
 test('las recetas nuevas tienen pestaña, datos y una única fuente principal', () => {
-  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela', 'tresLeches', 'cheesecakeCookie']) {
+  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela', 'tresLeches', 'cheesecakeCookie', 'birthdayChocolate']) {
     assert.match(html, new RegExp(`data-r="${id}"`));
     assert.match(html, new RegExp(`R\\.${id}=`));
   }
@@ -64,6 +64,21 @@ test('la cheesecake de cookie conserva cantidades, molde y horneado de la fuente
   assert.match(html, /El enfriado y la conservación refrigerada son indicaciones prácticas/);
 });
 
+test('la tarta de cumpleaños queda priorizada sin ocultar límites de la fuente', () => {
+  assert.equal((html.match(/DeXo9FGgnX-/g) || []).length, 1);
+  assert.equal((html.match(/data-r="birthdayChocolate"/g) || []).length, 1);
+  assert.match(html, /<button class="tab active" data-r="birthdayChocolate">⭐ Especial cumpleaños<\/button>/);
+  assert.match(html, /let current='birthdayChocolate',yogurt=true,serv=12/);
+  assert.match(html, /birthday-feature-v1/);
+  assert.match(html, /\['chocolate negro fundido',500,' g'/);
+  assert.match(html, /\['chocolate blanco fundido',500,' g'/);
+  assert.match(html, /\['cacahuetes',200,' g'/);
+  assert.match(html, /\['nata para la crema',500,' ml'/);
+  assert.match(html, /\['chocolate negro','1 pieza \(peso no indicado\)'/);
+  assert.match(html, /no facilita molde, temperatura ni tiempo de horneado/);
+  assert.match(html, /no se completa con ingredientes o técnicas inventadas/);
+});
+
 test('el tiramisú de limón no inventa soletillas y exige yemas pasteurizadas', () => {
   assert.match(html, /bizcochos de soletilla','cantidad pendiente'/);
   assert.match(html, /yemas comercialmente pasteurizadas/);
@@ -78,7 +93,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v23/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v24/);
   const shellMatch = serviceWorker.match(/const APP_SHELL=\[([^\]]+)\]/);
   assert.ok(shellMatch);
   const assets = [...shellMatch[1].matchAll(/'\.\/(.*?)'/g)].map(
