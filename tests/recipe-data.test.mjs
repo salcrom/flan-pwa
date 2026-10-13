@@ -105,18 +105,22 @@ test('el tiramisú de limón no inventa soletillas y exige yemas pasteurizadas',
 
 test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => {
   assert.equal((html.match(/DePc1XVubD-/g) || []).length, 1);
-  assert.equal((html.match(/baileys:\{/g) || []).length, 1);
+  assert.equal((html.match(/const R=\{baileys:\{/g) || []).length, 1);
   assert.equal((html.match(/data-r="baileys"/g) || []).length, 1);
   assert.match(html, /no se atribuyen al autor/);
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v26/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v27/);
   assert.match(serviceWorker, /event\.request\.mode==='navigate'/);
   assert.match(serviceWorker, /fetch\(event\.request\)/);
   assert.doesNotMatch(serviceWorker, /install',event=>\{[^}]*self\.skipWaiting/);
   assert.match(html, /id="checkUpdate"/);
   assert.match(html, /visibilitychange/);
+  assert.match(html, /const SCALE=/);
+  assert.match(html, /function scalePlan/);
+  assert.match(html, /function scaledStepBody/);
+  assert.match(html, /Estimación práctica: valida el primer molde o tanda/);
   const shellMatch = serviceWorker.match(/const APP_SHELL=\[([^\]]+)\]/);
   assert.ok(shellMatch);
   const assets = [...shellMatch[1].matchAll(/'\.\/(.*?)'/g)].map(
