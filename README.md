@@ -62,6 +62,11 @@ temporizadores y funcionamiento sin conexión.
   capas, deja sin peso una pieza de chocolate y no indica molde ni horneado. La
   PWA distingue esos límites de las adaptaciones prácticas y mantiene la receta
   pendiente de una prueba real.
+- Brownie de yogur griego: ficha creada a partir de la
+  [publicación de @sinculpasrecetas](https://www.instagram.com/p/DdpgRFNjmcd/),
+  identificada en Instagram como «Contenido de IA». Solo concreta 2 huevos,
+  1 cucharada de impulsor y 30 minutos a 190 °C; el resto de cantidades se
+  mantiene pendiente y la afirmación nutricional no se presenta como validada.
 
 - Bizcocho de canela tipo cinnamon roll: cantidades y horneado del [reel de @amortreats99](https://www.instagram.com/reel/DdrVvQ0KQUT/), con pasos de mezclado adaptados. Pendiente de prueba real.
 

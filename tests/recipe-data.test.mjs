@@ -17,7 +17,7 @@ test('el JavaScript incrustado conserva una sintaxis válida', () => {
 });
 
 test('las recetas nuevas tienen pestaña, datos y una única fuente principal', () => {
-  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela', 'tresLeches', 'cheesecakeCookie', 'birthdayChocolate']) {
+  for (const id of ['tostadastiramisu', 'tiramisuLimon', 'galletasAbuela', 'tresLeches', 'cheesecakeCookie', 'birthdayChocolate', 'brownieGriego']) {
     assert.match(html, new RegExp(`data-r="${id}"`));
     assert.match(html, new RegExp(`R\\.${id}=`));
   }
@@ -79,6 +79,20 @@ test('la tarta de cumpleaños queda priorizada sin ocultar límites de la fuente
   assert.match(html, /no se completa con ingredientes o técnicas inventadas/);
 });
 
+test('el brownie de yogur conserva solo las cantidades publicadas', () => {
+  assert.equal((html.match(/DdpgRFNjmcd/g) || []).length, 1);
+  assert.equal((html.match(/data-r="brownieGriego"/g) || []).length, 1);
+  assert.match(html, /R\.brownieGriego=\{/);
+  assert.match(html, /\['yogur griego','cantidad pendiente'/);
+  assert.match(html, /\['azúcar moreno','cantidad pendiente'/);
+  assert.match(html, /\['huevos',2,''/);
+  assert.match(html, /\['cacao en polvo','cantidad pendiente'/);
+  assert.match(html, /\['impulsor químico',1,' cucharada'/);
+  assert.match(html, /Hornea a 190 °C durante 30 minutos/);
+  assert.match(html, /Instagram la identifica como «Contenido de IA»/);
+  assert.match(html, /no está respaldada por datos nutricionales/);
+});
+
 test('el tiramisú de limón no inventa soletillas y exige yemas pasteurizadas', () => {
   assert.match(html, /bizcochos de soletilla','cantidad pendiente'/);
   assert.match(html, /yemas comercialmente pasteurizadas/);
@@ -93,7 +107,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v24/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v25/);
   const shellMatch = serviceWorker.match(/const APP_SHELL=\[([^\]]+)\]/);
   assert.ok(shellMatch);
   const assets = [...shellMatch[1].matchAll(/'\.\/(.*?)'/g)].map(
