@@ -97,6 +97,17 @@ test('el brownie de yogur distingue la fuente de las cantidades adaptadas', () =
   assert.match(html, /no está respaldada por datos nutricionales/);
 });
 
+test('la pannacotta está completa, se escala y conserva el tiempo de frío', () => {
+  assert.equal((html.match(/data-r="pannacotta"/g) || []).length, 1);
+  assert.match(html, /R\.pannacotta=\{/);
+  assert.match(html, /Pannacotta clásica de vainilla/);
+  assert.match(html, /pannacotta de vainilla de Good Food/);
+  assert.match(html, /pannacotta:\{type:'cold'/);
+  assert.match(html, /serv\+' ramequines/);
+  assert.match(html, /al menos 4 horas/);
+  assert.match(html, /equivalencia de gelatina indicada en el envase/);
+});
+
 test('el tiramisú de limón no inventa soletillas y exige yemas pasteurizadas', () => {
   assert.match(html, /bizcochos de soletilla','cantidad pendiente'/);
   assert.match(html, /yemas comercialmente pasteurizadas/);
@@ -111,7 +122,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v27/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v28/);
   assert.match(serviceWorker, /event\.request\.mode==='navigate'/);
   assert.match(serviceWorker, /fetch\(event\.request\)/);
   assert.doesNotMatch(serviceWorker, /install',event=>\{[^}]*self\.skipWaiting/);

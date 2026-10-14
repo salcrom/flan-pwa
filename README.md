@@ -5,6 +5,9 @@ temporizadores y funcionamiento sin conexión.
 
 ## Recetas
 
+- Pannacotta clásica de vainilla: receta fría de nata, leche y vainilla basada
+  en la receta de Good Food, con raciones, ramequines y pasos ajustables. La
+  equivalencia de gelatina debe comprobarse en el envase de cada marca.
 - Flan de nata: receta propia, validada por el propietario el 15 de septiembre
   de 2026 con resultado satisfactorio. Las cantidades concretas utilizadas y
   las observaciones detalladas quedan pendientes de registrar.
