@@ -108,6 +108,16 @@ test('la pannacotta está completa, se escala y conserva el tiempo de frío', ()
   assert.match(html, /equivalencia de gelatina indicada en el envase/);
 });
 
+test('las tartas trasladadas aparecen en Dulce y la bollería deja el selector', () => {
+  for (const id of ['lotusCheesecake', 'chocolateBanana', 'mousseChocolate', 'cinnamonCheesecake']) {
+    assert.match(html, new RegExp(`data-r="${id}"`));
+    assert.match(html, new RegExp(`R\\.${id}=\\{`));
+  }
+  assert.doesNotMatch(html, /data-r="rollos"/);
+  assert.doesNotMatch(html, /data-r="bolitas"/);
+  assert.doesNotMatch(html, /data-r="yogurmiel"/);
+});
+
 test('el tiramisú de limón no inventa soletillas y exige yemas pasteurizadas', () => {
   assert.match(html, /bizcochos de soletilla','cantidad pendiente'/);
   assert.match(html, /yemas comercialmente pasteurizadas/);
@@ -122,7 +132,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v28/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v29/);
   assert.match(serviceWorker, /event\.request\.mode==='navigate'/);
   assert.match(serviceWorker, /fetch\(event\.request\)/);
   assert.doesNotMatch(serviceWorker, /install',event=>\{[^}]*self\.skipWaiting/);
