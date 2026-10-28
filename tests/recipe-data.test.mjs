@@ -114,7 +114,7 @@ test('la pannacotta está completa, se escala y conserva el tiempo de frío', ()
 });
 
 test('las dos recetas guardadas conservan procedencia y separan las adaptaciones', () => {
-  for (const id of ['cinnamonRollCheesecakeSara', 'panettoneTiramisu']) {
+  for (const id of ['cinnamonCheesecake', 'panettoneTiramisu']) {
     assert.equal((html.match(new RegExp(`data-r="${id}"`, 'g')) || []).length, 1);
     assert.match(html, new RegExp(`R\\.${id}=\\{`));
   }
@@ -123,8 +123,14 @@ test('las dos recetas guardadas conservan procedencia y separan las adaptaciones
   assert.match(html, /\['queso crema',550,' g'/);
   assert.match(html, /\['nata para montar',450,' g'/);
   assert.match(html, /\['azúcar moreno',50,' g'/);
-  assert.match(html, /molde de 22 cm, el horneado a 170 °C durante 55–70 minutos/);
-  assert.match(html, /adaptación práctica de esta PWA pendiente de prueba real/);
+  assert.match(html, /El molde de 22 cm, 170 °C y 55–70 minutos son una adaptación práctica pendiente de prueba/);
+  assert.doesNotMatch(html, /cinnamonRollCheesecakeSara/);
+  assert.doesNotMatch(html, /\['crema agria'/);
+  assert.doesNotMatch(html, /Savory Click Recipes/);
+  assert.doesNotMatch(html, /\['hojaldre refrigerado'/);
+  assert.doesNotMatch(html, /\['Formar la corona'/);
+  assert.match(html, /La descripción indica <strong>450 g de nata<\/strong>; no crema agria/);
+  assert.match(html, /No añadas crema agria ni hojaldre/);
   assert.match(html, /\['yema de huevo comercialmente pasteurizada',216,' g'/);
   assert.match(html, /\['clara de huevo comercialmente pasteurizada',180,' g'/);
   assert.match(html, /Conserva a 8 °C o menos y consume en un máximo de 24 horas/);
@@ -155,7 +161,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v31/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v32/);
   assert.match(serviceWorker, /event\.request\.mode==='navigate'/);
   assert.match(serviceWorker, /fetch\(event\.request\)/);
   assert.doesNotMatch(serviceWorker, /install',event=>\{[^}]*self\.skipWaiting/);
