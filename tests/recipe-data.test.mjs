@@ -64,6 +64,25 @@ test('la cheesecake de cookie conserva cantidades, molde y horneado de la fuente
   assert.match(html, /El enfriado y la conservación refrigerada son indicaciones prácticas/);
 });
 
+test('el Cookie Pie queda entre las primeras recetas y conserva la ficha del reel', () => {
+  assert.equal((html.match(/data-r="cookiePie"/g) || []).length, 1);
+  assert.match(html, /<button class="tab active" data-r="birthdayChocolate">⭐ Especial cumpleaños<\/button><button class="tab" data-r="cookiePie">Cookie Pie<\/button>/);
+  assert.equal((html.match(/De1bbMdB_8X/g) || []).length, 1);
+  assert.match(html, /R\.cookiePie=\{/);
+  assert.match(html, /\['azúcar blanco',150,' g'/);
+  assert.match(html, /\['azúcar moreno',100,' g'/);
+  assert.match(html, /\['mantequilla a temperatura ambiente',200,' g'/);
+  assert.match(html, /\['huevos',3,''/);
+  assert.match(html, /\['harina de trigo',620,' g'/);
+  assert.match(html, /\['impulsor químico',6,' g'/);
+  assert.match(html, /\['chips de chocolate',300,' g'/);
+  assert.match(html, /\['Nocilla o crema de avellanas','al gusto'/);
+  assert.match(html, /molde desmontable de 20 cm/);
+  assert.match(html, /Hornea a 180 °C durante unos 20 minutos/);
+  assert.match(html, /las 12 porciones son una referencia práctica/);
+  assert.match(html, /cookiePie:\{type:'round',size:20\}/);
+});
+
 test('la tarta de cumpleaños queda priorizada sin ocultar límites de la fuente', () => {
   assert.equal((html.match(/DeXo9FGgnX-/g) || []).length, 1);
   assert.equal((html.match(/data-r="birthdayChocolate"/g) || []).length, 1);
@@ -161,7 +180,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v32/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v33/);
   assert.match(serviceWorker, /event\.request\.mode==='navigate'/);
   assert.match(serviceWorker, /fetch\(event\.request\)/);
   assert.doesNotMatch(serviceWorker, /install',event=>\{[^}]*self\.skipWaiting/);
