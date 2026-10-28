@@ -105,7 +105,12 @@ test('la pannacotta está completa, se escala y conserva el tiempo de frío', ()
   assert.match(html, /pannacotta:\{type:'cold'/);
   assert.match(html, /serv\+' ramequines/);
   assert.match(html, /al menos 4 horas/);
-  assert.match(html, /equivalencia de gelatina indicada en el envase/);
+  assert.match(html, /gelatina neutra en hojas',10,' g'/);
+  assert.match(html, /Añadir la mezcla sobre la gelatina/);
+  assert.match(html, /unas 6 láminas/);
+  assert.match(html, /al menos 6 horas/);
+  assert.match(html, /500 ml de nata/);
+  assert.match(html, /12,5 g para unos 690 ml/);
 });
 
 test('las tartas trasladadas aparecen en Dulce y la bollería deja el selector', () => {
@@ -132,7 +137,7 @@ test('la cheesecake conserva la procedencia sin atribuir la adaptación', () => 
 });
 
 test('la caché offline usa una versión nueva y todos sus activos existen', () => {
-  assert.match(serviceWorker, /dulce-a-tu-ritmo-v29/);
+  assert.match(serviceWorker, /dulce-a-tu-ritmo-v30/);
   assert.match(serviceWorker, /event\.request\.mode==='navigate'/);
   assert.match(serviceWorker, /fetch\(event\.request\)/);
   assert.doesNotMatch(serviceWorker, /install',event=>\{[^}]*self\.skipWaiting/);
